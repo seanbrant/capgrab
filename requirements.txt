@@ -1,0 +1,5 @@
+boto
+gunicorn
+itty
+pyres
+redis

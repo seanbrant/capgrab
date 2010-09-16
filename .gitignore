@@ -1,0 +1,7 @@
+.Python
+.DS_Store
+*.pyc
+bin/*
+include/*
+build/*
+lib/*
