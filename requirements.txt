@@ -1,5 +1,6 @@
-boto
+boto==1.9b
+flask
 gunicorn
-itty
 pyres
 redis
+git+git://github.com/morty/python-webkit2png.git
