@@ -1,5 +1,6 @@
 boto==1.9b
 celery
+django
 flask
 ghettoq
 gunicorn
