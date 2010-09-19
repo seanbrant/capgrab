@@ -1,28 +1,33 @@
 import os
 import subprocess
-import uuid
 
 from PIL import Image
 
 from capgrab.app import app
 
 
-def grabscreen(url):
-    uid = uuid.uuid4()
+def grabscreen(url, md5):
     out = os.path.join(app.config['TEMP_DIR'], '%s.%s' % \
-        (uid, app.config['SCREENGRAB_FORMAT']))
+        (md5, app.config['SCREENGRAB_FORMAT']))
     args = [
         app.config['CUTYCAP'],
         '--url=%s' % url,
         '--out=%s' % out,
-        '--min-width=1100',
+        '--plugins=on',
     ]
-    subprocess.call(args)
+    if app.config['USE_XVFB']:
+        args = [
+            'run-xvfb',
+            '--server-args=-screen 0, 1024x768x24',
+        ] + args
+    try:
+        subprocess.check_call(args)
+    except Exception:
+        return False
     return out
 
 
 def resizescreen(source, outfile, format, width, height):
-    # special case for jpg
     if format in ('jpg'):
         format = 'jpeg'
     resized = crop(source, width, height)

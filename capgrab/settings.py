@@ -17,22 +17,23 @@ BROKER_VHOST = 0
 CARROT_BACKEND = 'ghettoq.taproot.Redis'
 CELERYBEAT_SCHEDULE_FILENAME = os.path.join(TEMP_DIR, 'celery-beat')
 CELERY_ALWAYS_EAGER = False
-CELERY_EAGER_PROPAGATES_EXCEPTIONS = False
+CELERY_EAGER_PROPAGATES_EXCEPTIONS = True
 CELERY_RESULT_BACKEND = 'redis'
 CELERY_IMPORTS = ('capgrab.tasks',)
 
 URL_TIMEOUT = 30
 STALE_AFTER = 4320000  # 5 days
 SCREENGRAB_FORMAT = 'jpg'
+USE_XVFB = False
 
 CUTYCAP = '/usr/local/bin/cutycapt'
 
 DEFAULT_FOLDER = 'default'
-DEFAULT_SIZE = 't'
+DEFAULT_SIZE = 's'
 FULL_SIZE = 'l'
 IMAGE_SIZES = {
-    's': (75, 75),
-    't': (100, 63),
-    'm': (640, 400),
-    'l': (1024, 640),
+    't': (75, 47),
+    's': (150, 94),
+    'm': (300, 188),
+    'l': (600, 375),
 }
