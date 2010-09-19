@@ -1,0 +1,39 @@
+Requirements
+============
+
+* Python 2.6+
+* Qt 4.4.0+ (http://www.qtsoftware.com/)
+* CutyCapt (http://cutycapt.sourceforge.net/)
+* X-Server
+* PIL
+* Redis 2.0+
+* Nginx
+
+
+Installing
+==========
+
+    # sudo apt-get install xvfb subversion libqt4-webkit libqt4-dev g++
+    # svn co https://cutycapt.svn.sourceforge.net/svnroot/cutycapt
+    # cd cutycapt/CutyCapt
+    # qmake
+    # make
+    # cp CutyCapt /usr/local/bin/cutycapt
+
+    # wget http://redis.googlecode.com/files/redis-2.0.1.tar.gz
+    # tar -xzvf redis-2.0.1.tar.gz
+    # cd redis-2.0.1
+    # make
+    # sudo make install
+    # sudo cp utils/redis_init_script /etc/init.d/redis
+    # sudo update-rc.d redis defaults
+
+    # sudo apt-get install nginx
+
+    # sudo apt-get install git-core python-setuptools python-imaging
+    # sudo easy_install virtualenv pip
+    # git clone git@github.com:seanbrant/capgrab.git
+    # virtualenv capgrab
+    # source capgrab/bin/activate
+    # pip install -E capgrab/ capgrab/
+    # pip install -E capgrab/ -r capgrab/requirements.txt
