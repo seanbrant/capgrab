@@ -8,5 +8,6 @@ setup(
     author='Sean Brant',
     author_email='brant.sean@gmail.com',
     url='https://github.com/seanbrant/capgrab',
-    packages=['code/capgrab'],
+    packages=['capgrab'],
+    package_dir={'': 'src'},
 )
