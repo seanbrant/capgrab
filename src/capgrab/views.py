@@ -7,12 +7,12 @@ from boto.s3.key import Key
 from flask import redirect, request
 
 from capgrab import app, redis, bucket
-from capgrab.tasks import updatescreen
-
 
 @app.route('/caps/<url>/')
 @app.route('/caps/<url>/<size>/')
 def caps(url, size=app.config['DEFAULT_SIZE']):
+    from capgrab.tasks import updatescreen   
+
     url = base64.b16decode(url)
 
     default = request.args.get('default', None)
