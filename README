@@ -37,3 +37,4 @@ Installing
     # source capgrab/bin/activate
     # pip install -E capgrab/ capgrab/
     # pip install -E capgrab/ -r capgrab/requirements.txt
+    
